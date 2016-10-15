@@ -1,7 +1,10 @@
 <?php
 
+include 'controllerConfig.php';
+
 $usuario=filter_input(INPUT_POST,'USR');
 $password=filter_input(INPUT_POST,'PW');
+
 
 
 define('BD_SERVIDOR', 'localhost');
@@ -18,12 +21,14 @@ $myparam=$bd->prepare("SELECT u.Id FROM usuarios u WHERE u.Usuario='".$usuario."
 $myparam->execute();
 $respuesta=$myparam->fetchAll();
 if(is_null($respuesta) ||  empty($respuesta)){
-    header("Location: ../index.html");
+    //header("Location: ../index.html");
     //echo '<script type="text/javascript">alert("contraseña invalida");</script>';
+    echo $sv.$dir.$nokpage;
 }
 else{
-    header("Location: ../configuracion.html");
+    //header("Location: ../configuracion.html");
    // echo '<script type="text/javascript">alert("contraseña valida");</script>';
+    echo $sv.$dir.$okpage;
     }
 }
 catch (Exception $ex){
@@ -32,3 +37,4 @@ catch (Exception $ex){
     fwrite($handler, $ex->getMessage());
     
 }
+
