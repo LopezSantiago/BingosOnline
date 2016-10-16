@@ -9,12 +9,13 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> 
     </head>
     <body>
         <header>
-            <form action="./controladores/loggin.php" method="get" target="_blank">
-                <input id="usuario" type="text" placeholder="usuario" name="usuario"/>
-                <input id="password" type="password" placeholder="contraseña"  name="password"/>
+            <form action="./controladores/loggin.php" method="post" target="_self">
+                <input id="usuario" type="text" placeholder="usuario" name="USR"/>
+                <input id="password" type="password" placeholder="contraseña"  name="PW"/>
                 <button type="submit" value="ingreso">Ingresar</button>
             </form>
         </header>
